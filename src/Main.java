@@ -4,6 +4,7 @@ import java.util.Calendar;
 public class Main {
     public static void main(String[] args) throws IOException {
         try {
+            // put file path
             File file = new File("C:\\Users\\user\\Desktop\\자료구조 질문.txt");
             FileReader fr = new FileReader(file);
             String line = "",strToNum ="" ;
@@ -23,24 +24,27 @@ public class Main {
                 print.printMenu();
                 switch(input.selection())
                 {
-                    case 1: // print question
+                    case 1:
+                        // print question
                         int desired = input.inputQuestionNumber();
+
                         while ((line = bufReader.readLine()) != null) {
+                            // if that character is a number
                             if(Character.isDigit(line.charAt(idx)))
                             {
+                                // add to string
                                 strToNum += line.charAt(idx);
-                                 // if the number from input and number from question is matched
-                                if(Integer.parseInt(strToNum) == desired && idx == 1)
-                                {
-                                    idx = 0; // initialize idx
-                                    while((line.charAt(idx2))!='.')
-                                    {
-                                        System.out.println(line);
-                                    }
-                                    break;
-                                }
+                                idx++;
                             }
-                            idx += line.length();
+                            // if it is not a number
+                            else
+                            {
+                                // if the number is same as we inputted
+                                    if(desired == Integer.parseInt(strToNum))
+                                    {
+
+                                    }
+                            }
                         }
                         timer.answerTimer(print);
                         break;
