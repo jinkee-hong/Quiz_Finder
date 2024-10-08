@@ -10,6 +10,7 @@ public class Input {
         int num = 0 ;
         do{
             num = sc.nextInt();
+            //TODO : 55
             if(Character.isDigit(num) || num > MAX_QUESTION || num < 0)
             {
                 System.out.println("올바른 입력이 아닙니다.");

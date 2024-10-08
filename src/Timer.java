@@ -1,8 +1,10 @@
 import java.text.SimpleDateFormat;
 import java.time.*;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
+
 public class Timer {
-    private final int MIN = 600000;
+
     private final int MAX_INTERVIEW_TIME = 60;// mins
     private final int MAX_ANSWER_TIME = 2; // mins
 
@@ -16,27 +18,21 @@ public class Timer {
     }
 
 
-    public void answerTimer(Print print)
-    {
+    public Calendar answerTimer(Print print) throws InterruptedException {
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
         Calendar cal = createCalendar();
-        for (int i = 1; ; i++) {
-            if(i % MIN == 0)
-            {
-                cal.add(Calendar.MINUTE,1);
-                print.printInstruction("현재 시각 : " + sdf.format(cal.getTime()));
-            }
-            else if(( i > MAX_ANSWER_TIME*MIN))
-            {
-                break;
-            }
-        }
+        print.printInstruction("시작 시각 : " + sdf.format(cal.getTime()));
+        TimeUnit.MILLISECONDS.sleep(1000*60*2);
+        cal.add(Calendar.MINUTE,2);
+        print.printInstruction("종료 시각 :  "+sdf.format(cal.getTime()));
+        print.printInstruction("주어진 2분이 종료되었습니다.");
+        return cal;
     }
 
     public void interviewTimer(Print print,Calendar curr,Calendar end)
     {
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
-
+        // TODO : FIX
         int diff_h = end.get(Calendar.HOUR) - curr.get(Calendar.HOUR);
         int diff_m = end.get(Calendar.MINUTE) - curr.get(Calendar.MINUTE);
         int diff_s = end.get(Calendar.SECOND) - curr.get(Calendar.SECOND);

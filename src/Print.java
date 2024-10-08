@@ -23,7 +23,7 @@ public class Print {
         System.out.println(msg);
         if(msg!= null) {
             for (int i = 0; i < msg.length(); i++) {
-                System.out.print("-");
+                System.out.print("--");
             }
             System.out.println();
         }
