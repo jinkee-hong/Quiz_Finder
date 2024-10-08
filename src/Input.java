@@ -8,15 +8,8 @@ public class Input {
         print.printInstruction(MAX_QUESTION + "개의 질문 중 하나를 선택해주세요.");
         Scanner sc= new Scanner(System.in);
         int num = 0 ;
-        do{
-            num = sc.nextInt();
-            //TODO : 55
-            if(Character.isDigit(num) || num > MAX_QUESTION || num < 0)
-            {
-                System.out.println("올바른 입력이 아닙니다.");
-            }
-            //check num variable is not character or over max range
-        }while(Character.isDigit(num) || num > MAX_QUESTION || num < 0);
+        //TODO : 55
+        num = sc.nextInt();
         print.printInstruction(num+"번이 선택되었습니다.");
         return num;
     }
@@ -33,6 +26,29 @@ public class Input {
 
         print.printInstruction(num + "번을 선택하셨습니다.");
         return num;
+    }
+
+    public int parseIntoNumber(String line)
+    {
+        int idx = 0,count=0,radix =0,exp=-1 ;
+
+        while(Character.isDigit(line.charAt(idx)))
+        {
+            count++;
+            exp++;
+             idx++;
+             if(!Character.isDigit(line.charAt(idx)))
+             {
+                 for (int i = 0; i < count; i++)
+                 {
+                     radix += (int)Math.pow(10,exp) * (line.charAt(i)-48);
+                     exp--;
+                 }
+                 break;
+             }
+        }
+
+        return radix;
     }
 
 

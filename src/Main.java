@@ -5,74 +5,53 @@ import java.util.Objects;
 public class Main {
     public static void main(String[] args) throws IOException {
         try {
-            // put file path
-
             String line = "";
-            StringBuilder strToNum = new StringBuilder();
-            int idx = 0, idx2 = 0,temp_idx =0;
-            boolean isInstructionOn = true;
+            int  desired=0,currNum=0 ;
             Calendar currTime = Calendar.getInstance();
             Calendar endTime = Calendar.getInstance();
             endTime.add(Calendar.HOUR, 1);
-
+            boolean isFirstSentence = true;
             Print print = new Print();
             Input input = new Input();
             Timer timer = new Timer();
 
+            File file = new File("C:\\Users\\user\\Desktop\\자료구조 질문.txt");
+
              while (true) {
-                File file = new File("C:\\Users\\user\\Desktop\\자료구조 질문.txt");
-                FileReader fr = new FileReader(file);
+                 FileReader fr = new FileReader(file);
                  BufferedReader bufReader = new BufferedReader(fr);
 
-                // TODO :
                 timer.interviewTimer(print, currTime, endTime);
                 print.printMenu();
                 switch (input.selection()) {
                     case 1:
                         // print question
-                        int desired = input.inputQuestionNumber();
-
-                        while ((line = bufReader.readLine()) != null) {
-
-                            if (!line.isEmpty()) {
-                                    //loop till found alphabet
-                                    while(Character.isDigit(line.charAt(idx)))
+                        desired = input.inputQuestionNumber();
+                        while ((line = bufReader.readLine()) != null)
+                        {
+                            if (!line.isEmpty())
+                            {
+                                if(isFirstSentence)
+                                {
+                                    currNum = input.parseIntoNumber(line);
+                                    if(desired == currNum)
                                     {
-                                        // add to string
-                                        strToNum.append(line.charAt(idx));
-                                        idx++;
-                                    }
-                                 System.out.println(strToNum);
-                                // TODO
-                                    if (desired == Integer.parseInt(strToNum.toString()))
-                                    {
-                                        // if the number is same as we inputted
-                                        // TODO
-                                        if (isInstructionOn) {
-                                            System.out.println(line);
-                                        }
-                                        while(!Objects.equals(line = bufReader.readLine(), ""))
+                                        // print instruction
+                                        print.printInstruction(line);
+                                        while(!(line = bufReader.readLine()).isEmpty())
                                         {
-                                            System.out.println(line);
+                                            print.printInstruction(line);
                                         }
-                                        //currTime = timer.answerTimer(print);
-                                        idx = 0;
-                                        isInstructionOn = false;
-                                        strToNum.replace(0,strToNum.length(),""); // re-initialize String
-                                        break;
                                     }
-                                idx = 0;
-                                strToNum.replace(0,strToNum.length(),""); // re-initialize String
-
-                             }
+                                    isFirstSentence = false;
+                                }
+                            }
                             else
                             {
-                                idx = 0;
-                                strToNum.replace(0,strToNum.length(),""); // re-initialize String
+                                isFirstSentence = true;
                             }
                         }
-                        isInstructionOn = true;
-                         break;
+                          break;
                     case 2: //quit
                         print.printInstruction("종료합니다.");
                         bufReader.close();
