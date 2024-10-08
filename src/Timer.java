@@ -32,7 +32,6 @@ public class Timer {
     public void interviewTimer(Print print,Calendar curr,Calendar end)
     {
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
-        // TODO : FIX
         int diff_m = 60 - (curr.get(Calendar.MINUTE) -  end.get(Calendar.MINUTE));
 
         if(curr.getTime().equals(end.getTime()))
