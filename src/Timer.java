@@ -33,9 +33,7 @@ public class Timer {
     {
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
         // TODO : FIX
-        int diff_h = end.get(Calendar.HOUR) - curr.get(Calendar.HOUR);
-        int diff_m = end.get(Calendar.MINUTE) - curr.get(Calendar.MINUTE);
-        int diff_s = end.get(Calendar.SECOND) - curr.get(Calendar.SECOND);
+        int diff_m = 60 - (curr.get(Calendar.MINUTE) -  end.get(Calendar.MINUTE));
 
         if(curr.getTime().equals(end.getTime()))
         {
@@ -44,7 +42,7 @@ public class Timer {
         else
         {
             print.printInstruction("현재 시간 : "+sdf.format(curr.getTime()));
-            print.printInstruction("남은 시간 : " + diff_h+"시" +" " + diff_m+"분"+" " + diff_s+"초");
+            print.printInstruction("남은 시간 : " + diff_m+"분 남았습니다.");
         }
     }
 

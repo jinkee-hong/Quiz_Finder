@@ -1,16 +1,16 @@
 import java.io.*;
 import java.util.Calendar;
-import java.util.Objects;
 
 public class Main {
     public static void main(String[] args) throws IOException {
         try {
             String line = "";
             int  desired=0,currNum=0 ;
-            Calendar currTime = Calendar.getInstance();
+
             Calendar endTime = Calendar.getInstance();
-            endTime.add(Calendar.HOUR, 1);
+
             boolean isFirstSentence = true;
+
             Print print = new Print();
             Input input = new Input();
             Timer timer = new Timer();
@@ -18,9 +18,10 @@ public class Main {
             File file = new File("C:\\Users\\user\\Desktop\\자료구조 질문.txt");
 
              while (true) {
+                 Calendar currTime = Calendar.getInstance();
                  FileReader fr = new FileReader(file);
                  BufferedReader bufReader = new BufferedReader(fr);
-
+                // TODO : fix time that is left for whole interview
                 timer.interviewTimer(print, currTime, endTime);
                 print.printMenu();
                 switch (input.selection()) {
@@ -40,10 +41,13 @@ public class Main {
                                         print.printInstruction(line);
                                         while(!(line = bufReader.readLine()).isEmpty())
                                         {
-                                            print.printInstruction(line);
+                                            print.printJumpedLine(line);
                                         }
+                                        // timer for answering question
+                                        // currTime = timer.answerTimer(print);
                                     }
-                                    isFirstSentence = false;
+
+                                     isFirstSentence = false;
                                 }
                             }
                             else
