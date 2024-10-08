@@ -1,0 +1,39 @@
+
+
+Version:	3.50
+CmdLine:	C:\Users\user\Desktop\QuestionFinder\QuestionMatcher.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\user\Desktop\QuestionFinder\.
+Requires JDK:	Yes
+Requires 64-Bit: Yes
+Java min ver:	1.011.000
+Java max ver:	
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\MinGW\gcc\bin;C:\Program Files (x86)\MinGW\gcc\libexec\gcc\x86_64-w64-mingw32\11.2.0;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Calibre2\;C:\Program Files\Git\cmd;C:\mingw64\bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Users\user\AppData\Local\Microsoft\WindowsApps;C:\Users\user\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\user\AppData\Local\Programs\Python\Python310\Scripts;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.2\bin;C:\Program Files\Java\jdk-11.0.15.1\bin
+JRE paths:	;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\MinGW\gcc\bin;C:\Program Files (x86)\MinGW\gcc\libexec\gcc\x86_64-w64-mingw32\11.2.0;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Calibre2\;C:\Program Files\Git\cmd;C:\mingw64\bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Users\user\AppData\Local\Microsoft\WindowsApps;C:\Users\user\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\user\AppData\Local\Programs\Python\Python310\Scripts;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.2\bin;C:\Program Files\Java\jdk-11.0.15.1\bin
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\MinGW\gcc\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\MinGW\gcc\libexec\gcc\x86_64-w64-mingw32\11.2.0\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\system32\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Calibre2\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Git\cmd\bin\javaw.exe (not found)
+Check launcher:	C:\mingw64\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\bin\javaw.exe (not found)
+Check launcher:	C:\Users\user\AppData\Local\Microsoft\WindowsApps\bin\javaw.exe (not found)
+Check launcher:	C:\Users\user\AppData\Local\Programs\Microsoft VS Code\bin\javaw.exe (not found)
+Check launcher:	C:\Users\user\AppData\Local\Programs\Python\Python310\Scripts\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.2\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Java\jdk-11.0.15.1\bin\javaw.exe (OK)
+Check javac:	C:\Program Files\Java\jdk-11.0.15.1\bin\javac.exe (OK)
+Warning:	formatJavaVersion() too many parts added.
+Version string: 1.011.000_015 / 64-Bit (OK)
+Launcher:	C:\Program Files\Java\jdk-11.0.15.1\bin\javaw.exe
+Launcher args:	-jar "C:\Users\user\Desktop\QuestionFinder\QuestionMatcher.exe"
+Args length:	63/32768 chars
+Exit code:	0

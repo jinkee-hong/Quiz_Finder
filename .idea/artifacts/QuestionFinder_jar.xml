@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="QuestionFinder:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/QuestionFinder_jar</output-path>
+    <root id="archive" name="QuestionFinder.jar">
+      <element id="module-output" name="QuestionFinder" />
+    </root>
+  </artifact>
+</component>
