@@ -1,4 +1,5 @@
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.Calendar;
 
 public class Main {
@@ -19,9 +20,7 @@ public class Main {
 
              while (true) {
                  Calendar currTime = Calendar.getInstance();
-                 FileReader fr = new FileReader(file);
-                 BufferedReader bufReader = new BufferedReader(fr);
-                // TODO : fix time that is left for whole interview
+                 BufferedReader bufReader = new BufferedReader(new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8));
                 timer.interviewTimer(print, currTime, endTime);
                 print.printMenu();
                 switch (input.selection()) {
@@ -43,8 +42,7 @@ public class Main {
                                         {
                                             print.printJumpedLine(line);
                                         }
-                                        // timer for answering question
-                                        // currTime = timer.answerTimer(print);
+                                         currTime = timer.answerTimer(print);
                                     }
 
                                      isFirstSentence = false;
@@ -68,9 +66,9 @@ public class Main {
         {
             System.out.println("FILE DO NOT FOUND");
         }
-//        catch(InterruptedException e)
-//        {
-//            System.out.println("INTERRUPT EXCEPTION ");
-//        }
+        catch(InterruptedException e)
+        {
+            System.out.println("INTERRUPT EXCEPTION ");
+        }
     }
 }
