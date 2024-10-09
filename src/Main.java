@@ -5,8 +5,8 @@ import java.util.Calendar;
 public class Main {
     public static void main(String[] args) throws IOException {
         try {
-            String line = "";
-            int  desired=0,currNum=0 ;
+            String line  ;
+            int  desired ,currNum  ;
 
             Calendar endTime = Calendar.getInstance();
 
